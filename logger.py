@@ -18,7 +18,7 @@ def read_book():
     with open('phonebook.txt','r',encoding='utf_8') as book:
         contacts_list = book.read().rstrip().split('\n\n')
         for contact in enumerate(contacts_list,1):
-            print(*contact)
+            print(f'\n',*contact)
     book.close()
 
 def search_contact():
@@ -38,7 +38,7 @@ def search_contact():
     for contact_str in contacts_list:
         contact_lst=contact_str.replace('\n', ' ').split()
         if search in contact_lst[index_var].strip().lower():
-            print(contact_str)
+            print(f'\n{contact_str}')
     book.close()
 
 def copy_contact():
@@ -53,7 +53,7 @@ def copy_contact():
     ind_var = int(con_search)-1
 
     with open('phonebook.txt','r',encoding='utf_8') as book:
-        with open('phonebook_2.txt','w',encoding='utf_8') as book_2:
+        with open('phonebook_2.txt','a',encoding='utf_8') as book_2:
             sourse = book.read().rstrip().split('\n\n')
-            book_2.write(sourse[ind_var])
+            book_2.write(f'{sourse[ind_var]}\n\n')
             
