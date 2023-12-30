@@ -1,3 +1,3 @@
-from interface import project
+from phonebook import *
 
-project()
+interface()
